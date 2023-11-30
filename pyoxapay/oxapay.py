@@ -51,8 +51,8 @@ class OxaPayAPI:
         try:
             async with self.session.post(url, json=data) as response:
                 return await response.json()
-            except ClientError as e:
-                raise Exception(f"Failed to create invoice: {e}")
+        except ClientError as e:
+            raise Exception(f"Failed to create invoice: {e}")
 
     async def create_static_wallet(self, currency, callbackUrl):
         """
@@ -77,8 +77,8 @@ class OxaPayAPI:
         try:
             async with self.session.post(url, json=data) as response:
                 return await response.json()
-            except ClientError as e:
-                raise Exception(f"Failed to create static wallet: {e}")
+        except ClientError as e:
+            raise Exception(f"Failed to create static wallet: {e}")
 
     async def revoke_static_wallet(self, address):
         """
@@ -101,8 +101,8 @@ class OxaPayAPI:
         try:
             async with self.session.post(url, json=data) as response:
                 return await response.json()
-            except ClientError as e:
-                raise Exception(f"Failed to revoke static wallet: {e}")
+        except ClientError as e:
+            raise Exception(f"Failed to revoke static wallet: {e}")
 
     async def get_payment_information(self, trackId):
         """
@@ -125,8 +125,8 @@ class OxaPayAPI:
         try:
             async with self.session.post(url, json=data) as response:
                 return await response.json()
-            except ClientError as e:
-                raise Exception(f"Failed to get payment information: {e}")
+        except ClientError as e:
+            raise Exception(f"Failed to get payment information: {e}")
 
     async def close(self):
         """
